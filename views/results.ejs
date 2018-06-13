@@ -1,0 +1,55 @@
+
+<head>
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <!-- Compiled and minified JavaScript -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>  
+</head>
+<body background="http://pwo-wiki.info/images/4/46/Grass_comparison.png">
+    
+    <style>
+    body {
+    background-size: 100vw 100vh;
+    
+  }
+  </style>
+    
+  <nav>
+    <div class="nav-wrapper grey">
+      <a href="/" class="brand-logo">Home</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="/about">About Me</a></li>
+        <li><a href="/portfolio">My Portfolio</a></li>
+        <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+  
+  <div class="container">
+      <h1>Results</h1>
+      <h3>Pokemon</h3>
+      
+      <div>
+       <form method="POST" action="/">
+      <p>Search Pokemon Here: <input type="text" name="userinput" /></p>
+      <button type="submit" class="btn btn-primary">Search</button>      
+    </form>
+    </div>
+      
+
+  <% data.cards.forEach(function(card){ %>
+    <h3><%= card.name %></h3>
+    <img src="<%= card.imageUrl %>" />
+    <p><%= "card national pokedex number: "+card.nationalPokedexNumber %></p>
+    <p><%= "type: "+card.types %></p>
+    <p><%= "Hp: "+card.hp %></p>
+    <p><%= "card rarity type: "+card.rarity %></p>
+    
+   
+  <% }) %>
+  </div>
+</body>
